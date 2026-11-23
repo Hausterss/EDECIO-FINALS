@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apresentação - Trabalho #3 Full Stack (BelleVie Salão)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      height: 100vh;
+      width: 100vw;
+    }
+    .slide.active {
+      display: flex;
+    }
+    pre {
+      font-family: 'Fira Code', 'Consolas', monospace;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 select-none">
+
+  <!-- SLIDE 1: CAPA -->
+  <section class="slide active flex-col justify-between p-12 md:p-20 bg-gradient-to-br from-slate-950 via-rose-950/40 to-slate-900">
+    <div class="flex items-center justify-between border-b border-white/10 pb-6">
+      <div>
+        <p class="text-rose-400 font-bold tracking-wider uppercase text-sm">Centro Universitário UniSenac – Campus Pelotas</p>
+        <p class="text-slate-400 text-sm">Tecnologia em Análise e Desenvolvimento de Sistemas • Programação Full Stack</p>
+      </div>
+      <span class="bg-rose-500/20 text-rose-300 border border-rose-500/30 px-4 py-1.5 rounded-full text-sm font-semibold">
+        Prof. Edécio Fernando Iepsen
+      </span>
+    </div>
+
+    <div class="my-auto max-w-4xl space-y-6">
+      <span class="inline-block bg-rose-600 text-white text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-lg">
+        Trabalho #3 • Uso de IA no Desenvolvimento Full Stack
+      </span>
+      <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+        BelleVie Studio:<br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-amber-300">
+          Sistema de Controle para Salão de Beleza
+        </span>
+      </h1>
+      <p class="text-xl text-slate-300 leading-relaxed max-w-3xl">
+        Desenvolvimento de uma aplicação Full Stack com Node.js, Express, Prisma ORM e React, utilizando o <strong class="text-white">ChatGPT</strong> como ferramenta de apoio em regras de negócio e produtividade.
+      </p>
+    </div>
+
+    <div class="flex items-center justify-between text-sm text-slate-400 border-t border-white/10 pt-6">
+      <span>Data da Apresentação: 26/11/2026</span>
+      <span>Use as setas ⬅️ ➡️ do teclado para navegar (Slide 1 de 7)</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: O PROJETO E AS TECNOLOGIAS -->
+  <section class="slide flex-col justify-between p-12 md:p-16 bg-slate-950">
+    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+      <h2 class="text-2xl font-bold text-rose-400">1. Visão Geral do Sistema & Tecnologias</h2>
+      <span class="text-slate-500 text-sm">Slide 2 de 7</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto">
+      <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-8 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-rose-400 bg-rose-500/10 px-3 py-1 rounded-md">
+          O Problema & Solução
+        </span>
+        <h3 class="text-2xl font-bold text-white">O que o sistema controla?</h3>
+        <ul class="space-y-3 text-slate-300 text-base leading-relaxed">
+          <li>• <strong class="text-white">Cadastro de Clientes:</strong> Telefone, e-mail e observações/alergias.</li>
+          <li>• <strong class="text-white">Catálogo de Serviços:</strong> Categorias (Cabelo, Unhas, Maquiagem), preços e duração em minutos.</li>
+          <li>• <strong class="text-white">Equipe de Profissionais:</strong> Especialidade de cada profissional e contagem de atendimentos.</li>
+          <li>• <strong class="text-white">Agenda & Controle de Caixa:</strong> Agendamentos por data/hora, trava contra horários duplicados e resumo financeiro (Recebido vs. A Receber).</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-8 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-md">
+          Stack do Curso
+        </span>
+        <h3 class="text-2xl font-bold text-white">Tecnologias Utilizadas</h3>
+        <div class="grid grid-cols-2 gap-4 pt-2">
+          <div class="bg-slate-800/70 p-4 rounded-xl border border-white/5">
+            <p class="font-bold text-rose-300">Back-end</p>
+            <p class="text-sm text-slate-300 mt-1">Node.js + Express</p>
+            <p class="text-xs text-slate-400 mt-1">API RESTful com rotas organizadas por recurso</p>
+          </div>
+          <div class="bg-slate-800/70 p-4 rounded-xl border border-white/5">
+            <p class="font-bold text-rose-300">Banco & ORM</p>
+            <p class="text-sm text-slate-300 mt-1">Prisma ORM + SQLite</p>
+            <p class="text-xs text-slate-400 mt-1">4 tabelas relacionadas com integridade referencial</p>
+          </div>
+          <div class="bg-slate-800/70 p-4 rounded-xl border border-white/5">
+            <p class="font-bold text-rose-300">Front-end</p>
+            <p class="text-sm text-slate-300 mt-1">React (Vite)</p>
+            <p class="text-xs text-slate-400 mt-1">Hooks (useState, useEffect) e consumo via Fetch API</p>
+          </div>
+          <div class="bg-slate-800/70 p-4 rounded-xl border border-white/5">
+            <p class="font-bold text-rose-300">Estilização & IA</p>
+            <p class="text-sm text-slate-300 mt-1">Tailwind CSS + ChatGPT</p>
+            <p class="text-xs text-slate-400 mt-1">Layout responsivo e apoio do ChatGPT em pontos-chave</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-xs text-slate-500 border-t border-white/10 pt-4">
+      BelleVie Studio • Trabalho #3 Programação Full Stack
+    </div>
+  </section>
+
+  <!-- SLIDE 3: COMO USAMOS O CHATGPT (SEM EXAGEROS) -->
+  <section class="slide flex-col justify-between p-12 md:p-16 bg-slate-950">
+    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+      <h2 class="text-2xl font-bold text-rose-400">2. Como Utilizamos o ChatGPT no Projeto</h2>
+      <span class="text-slate-500 text-sm">Slide 3 de 7</span>
+    </div>
+
+    <div class="my-auto space-y-6">
+      <div class="bg-rose-500/10 border border-rose-500/30 rounded-2xl p-6">
+        <h3 class="text-xl font-bold text-white">Abordagem Prática: IA como Copiloto de Consulta</h3>
+        <p class="text-slate-300 mt-2 text-base">
+          Em vez de pedir para a IA gerar um sistema inteiro de uma vez, montamos a estrutura base que aprendemos em aula e usamos o <strong class="text-rose-300">ChatGPT</strong> para resolver <strong class="text-white">3 pontos específicos</strong>:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-slate-900 border border-white/10 rounded-2xl p-6 space-y-3">
+          <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">Prompt #1</span>
+          <h4 class="text-lg font-bold text-white">Modelagem no Prisma</h4>
+          <p class="text-xs text-slate-300 italic bg-slate-950 p-3 rounded-xl border border-white/5">
+            "Me ajuda a montar o schema.prisma relacionando Clientes, Serviços, Profissionais e Agendamentos com data, horário, status e valor cobrado."
+          </p>
+          <p class="text-sm text-slate-300">
+            <strong class="text-emerald-400">Resultado:</strong> Entregou os 4 models com as relações <code class="text-rose-300">@relation</code> prontas e <code class="text-rose-300">onDelete: Cascade</code>.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-white/10 rounded-2xl p-6 space-y-3">
+          <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">Prompt #2</span>
+          <h4 class="text-lg font-bold text-white">Bloqueio de Horário Duplicado</h4>
+          <p class="text-xs text-slate-300 italic bg-slate-950 p-3 rounded-xl border border-white/5">
+            "Na rota POST /api/agendamentos, como validar no Prisma para impedir que o mesmo profissional seja agendado duas vezes na mesma data e horário?"
+          </p>
+          <p class="text-sm text-slate-300">
+            <strong class="text-emerald-400">Resultado:</strong> Criou a consulta com <code class="text-rose-300">findFirst</code> ignorando status <code class="text-rose-300">CANCELADO</code> e retornando erro 409.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-white/10 rounded-2xl p-6 space-y-3">
+          <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">Prompt #3</span>
+          <h4 class="text-lg font-bold text-white">Autopreenchimento e Caixa</h4>
+          <p class="text-xs text-slate-300 italic bg-slate-950 p-3 rounded-xl border border-white/5">
+            "No React, ao escolher um serviço no select, quero preencher o campo Valor Cobrado automaticamente com o preço daquele serviço e somar o caixa no dashboard."
+          </p>
+          <p class="text-sm text-slate-300">
+            <strong class="text-emerald-400">Resultado:</strong> Gerou a função <code class="text-rose-300">aoSelecionarServico</code> e o cálculo com <code class="text-rose-300">.reduce()</code> na API.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-xs text-slate-500 border-t border-white/10 pt-4">
+      BelleVie Studio • Prompts Focais e Diretos
+    </div>
+  </section>
+
+  <!-- SLIDE 4: ANÁLISE DO CÓDIGO BACK-END -->
+  <section class="slide flex-col justify-between p-12 md:p-16 bg-slate-950">
+    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+      <h2 class="text-2xl font-bold text-rose-400">3. Análise de Código: Back-end (Express + Prisma)</h2>
+      <span class="text-slate-500 text-sm">Slide 4 de 7</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+      <div class="bg-slate-900 border border-white/10 rounded-2xl p-6">
+        <p class="text-xs font-bold uppercase text-rose-400 mb-2">Regra de Conflito de Agenda (server/index.js)</p>
+        <pre class="text-xs text-emerald-300 bg-slate-950 p-4 rounded-xl overflow-x-auto leading-relaxed">
+// Verifica se a profissional já está ocupada
+const conflito = await prisma.agendamento.findFirst({
+  where: {
+    data: String(data),
+    horario: String(horario),
+    profissionalId: Number(profissionalId),
+    status: { not: 'CANCELADO' }
+  }
+});
+
+if (conflito) {
+  return res.status(409).json({
+    erro: 'Este profissional já possui atendimento nesse horário!'
+  });
+}</pre>
+      </div>
+
+      <div class="bg-slate-900 border border-white/10 rounded-2xl p-6">
+        <p class="text-xs font-bold uppercase text-rose-400 mb-2">Cálculo do Caixa no Dashboard (server/index.js)</p>
+        <pre class="text-xs text-amber-300 bg-slate-950 p-4 rounded-xl overflow-x-auto leading-relaxed">
+const concluidos = agendamentos.filter(
+  (a) => a.status === 'CONCLUIDO'
+);
+const pendentes = agendamentos.filter(
+  (a) => a.status === 'AGENDADO'
+);
+
+const faturamentoTotal = concluidos.reduce(
+  (acc, item) => acc + Number(item.valorCobrado || 0), 0
+);
+const faturamentoPrevisto = pendentes.reduce(
+  (acc, item) => acc + Number(item.valorCobrado || 0), 0
+);</pre>
+      </div>
+    </div>
+
+    <div class="text-xs text-slate-500 border-t border-white/10 pt-4">
+      BelleVie Studio • Análise do Back-end
+    </div>
+  </section>
+
+  <!-- SLIDE 5: ANÁLISE DO CÓDIGO FRONT-END -->
+  <section class="slide flex-col justify-between p-12 md:p-16 bg-slate-950">
+    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+      <h2 class="text-2xl font-bold text-rose-400">4. Análise de Código: Front-end (React + Tailwind)</h2>
+      <span class="text-slate-500 text-sm">Slide 5 de 7</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+      <div class="bg-slate-900 border border-white/10 rounded-2xl p-6 space-y-3">
+        <p class="text-xs font-bold uppercase text-rose-400">Preenchimento Automático de Preço (App.jsx)</p>
+        <pre class="text-xs text-sky-300 bg-slate-950 p-4 rounded-xl overflow-x-auto leading-relaxed">
+// Ao escolher o serviço no select, puxa o preço da tabela
+const aoSelecionarServico = (servicoId) => {
+  const serv = servicos.find(
+    (s) => s.id === Number(servicoId)
+  );
+  setFormAgendamento((prev) => ({
+    ...prev,
+    servicoId,
+    valorCobrado: serv ? String(serv.preco) : ''
+  }));
+};</pre>
+        <p class="text-xs text-slate-400">
+          Isso evita erro de digitação da recepcionista, mas mantém o campo aberto caso o salão queira dar um desconto.
+        </p>
+      </div>
+
+      <div class="bg-slate-900 border border-white/10 rounded-2xl p-6 space-y-3">
+        <p class="text-xs font-bold uppercase text-rose-400">Atualização Rápida de Status (PATCH)</p>
+        <pre class="text-xs text-pink-300 bg-slate-950 p-4 rounded-xl overflow-x-auto leading-relaxed">
+const alterarStatusAgendamento = async (id, novoStatus) => {
+  const resp = await fetch(
+    `${API_URL}/agendamentos/${id}/status`,
+    {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: novoStatus })
+    }
+  );
+  if (resp.ok) carregarTudo();
+};</pre>
+        <p class="text-xs text-slate-400">
+          Com um clique em "Concluir" ou "Cancelar", a agenda e os cards financeiros do topo atualizam em tempo real.
+        </p>
+      </div>
+    </div>
+
+    <div class="text-xs text-slate-500 border-t border-white/10 pt-4">
+      BelleVie Studio • Análise do Front-end
+    </div>
+  </section>
+
+  <!-- SLIDE 6: O QUE FUNCIONOU VS PROBLEMAS ENCONTRADOS -->
+  <section class="slide flex-col justify-between p-12 md:p-16 bg-slate-950">
+    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+      <h2 class="text-2xl font-bold text-rose-400">5. Testes: O que Funcionou vs. Problemas Encontrados</h2>
+      <span class="text-slate-500 text-sm">Slide 6 de 7</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto">
+      <div class="bg-emerald-950/30 border border-emerald-500/30 rounded-2xl p-7 space-y-4">
+        <h3 class="text-xl font-bold text-emerald-400">✅ O que funcionou bem de primeira</h3>
+        <ul class="space-y-3 text-slate-200 text-sm leading-relaxed">
+          <li>• <strong>Relacionamentos no Prisma:</strong> O uso do <code class="text-emerald-300">include</code> trouxe o nome do cliente, do serviço e da profissional direto na listagem da agenda sem precisar fazer várias requisições.</li>
+          <li>• <strong>Validação de choque de horário:</strong> A regra sugerida pelo ChatGPT bloqueou agendamentos duplicados no mesmo horário para a mesma profissional logo no primeiro teste.</li>
+          <li>• <strong>Layout com Tailwind CSS:</strong> A divisão em cards de resumo e abas ficou limpa e fácil de usar.</li>
+        </ul>
+      </div>
+
+      <div class="bg-amber-950/30 border border-amber-500/30 rounded-2xl p-7 space-y-4">
+        <h3 class="text-xl font-bold text-amber-400">⚠️ Problemas encontrados e como corrigimos</h3>
+        <ul class="space-y-3 text-slate-200 text-sm leading-relaxed">
+          <li>
+            • <strong>Erro de Tipagem no Prisma (String vs Number):</strong><br />
+            Os campos <code class="text-amber-300">clienteId</code> e <code class="text-amber-300">preco</code> vinham do formulário React como texto (<code class="text-amber-300">"1"</code>, <code class="text-amber-300">"120"</code>) e o Prisma dava erro esperando <code class="text-amber-300">Int</code> ou <code class="text-amber-300">Float</code>. Corrigimos convertendo com <code class="text-amber-300">Number()</code> no Back-end.
+          </li>
+          <li>
+            • <strong>Erro ao Excluir Serviço já Agendado (Foreign Key):</strong><br />
+            Ao tentar apagar um serviço que já tinha agendamentos, o banco bloqueava com erro 500. Adicionamos um <code class="text-amber-300">try/catch</code> retornando um aviso claro na tela explicando o vínculo.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-xs text-slate-500 border-t border-white/10 pt-4">
+      BelleVie Studio • Avaliação Crítica do Uso da IA
+    </div>
+  </section>
+
+  <!-- SLIDE 7: CONCLUSÃO E DEMONSTRAÇÃO -->
+  <section class="slide flex-col justify-between p-12 md:p-16 bg-gradient-to-br from-slate-950 via-rose-950/40 to-slate-900">
+    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+      <h2 class="text-2xl font-bold text-rose-400">6. Conclusão & Demonstração Prática</h2>
+      <span class="text-slate-500 text-sm">Slide 7 de 7</span>
+    </div>
+
+    <div class="my-auto max-w-3xl mx-auto text-center space-y-6">
+      <span class="bg-rose-500/20 text-rose-300 border border-rose-500/30 px-4 py-1.5 rounded-full text-sm font-semibold">
+        Conclusão da Experiência
+      </span>
+      <h3 class="text-4xl font-extrabold text-white leading-tight">
+        A IA acelera muito o desenvolvimento quando sabemos o que pedir e como revisar o código.
+      </h3>
+      <p class="text-slate-300 text-lg leading-relaxed">
+        Conhecer a base de <strong class="text-white">Node.js, Express, Prisma e React</strong> vista em aula foi essencial para identificar os erros de tipagem e de chave estrangeira que o código gerado pela IA não tratava sozinho.
+      </p>
+      <div class="pt-4">
+        <div class="inline-block bg-white text-rose-700 font-bold px-8 py-4 rounded-2xl shadow-lg text-lg">
+          🚀 Vamos para a Demonstração do Sistema Funcionando!
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between text-xs text-slate-400 border-t border-white/10 pt-4">
+      <span>Obrigado! • Perguntas?</span>
+      <span>Slide 7 de 7</span>
+    </div>
+  </section>
+
+  <!-- CONTROLES FLUTUANTES -->
+  <div class="fixed bottom-5 right-6 flex items-center gap-2 bg-slate-900/90 border border-white/15 px-3 py-2 rounded-xl shadow-lg">
+    <button onclick="mudarSlide(-1)" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-sm font-semibold">
+      ◀ Anterior
+    </button>
+    <span id="indicador" class="text-xs text-slate-300 px-2 font-mono">1 / 7</span>
+    <button onclick="mudarSlide(1)" class="px-3 py-1 bg-rose-600 hover:bg-rose-500 rounded-lg text-sm font-semibold">
+      Próximo ▶
+    </button>
+  </div>
+
+  <script>
+    let atual = 0;
+    const slides = document.querySelectorAll('.slide');
+    const indicador = document.getElementById('indicador');
+
+    function atualizar() {
+      slides.forEach((s, i) => s.classList.toggle('active', i === atual));
+      indicador.textContent = `${atual + 1} / ${slides.length}`;
+    }
+
+    function mudarSlide(direcao) {
+      atual = Math.max(0, Math.min(slides.length - 1, atual + direcao));
+      atualizar();
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') mudarSlide(1);
+      if (e.key === 'ArrowLeft') mudarSlide(-1);
+    });
+  </script>
+</body>
+</html>

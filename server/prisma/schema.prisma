@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Cliente {
+  id            Int           @id @default(autoincrement())
+  nome         String
+  telefone     String
+  email        String?
+  observacoes  String?
+  criadoEm     DateTime      @default(now())
+  agendamentos Agendamento[]
+
+  @@map("clientes")
+}
+
+model Servico {
+  id           Int           @id @default(autoincrement())
+  nome         String
+  categoria    String        // Ex: Cabelo, Unhas, Estética, Maquiagem
+  preco        Float
+  duracaoMin   Int           // Duração estimada em minutos
+  ativo        Boolean       @default(true)
+  agendamentos Agendamento[]
+
+  @@map("servicos")
+}
+
+model Profissional {
+  id           Int           @id @default(autoincrement())
+  nome         String
+  especialidade String
+  telefone     String
+  agendamentos Agendamento[]
+
+  @@map("profissionais")
+}
+
+model Agendamento {
+  id             Int          @id @default(autoincrement())
+  data           String       // Formato YYYY-MM-DD
+  horario        String       // Formato HH:mm
+  status         String       @default("AGENDADO") // AGENDADO, CONCLUIDO, CANCELADO
+  formaPagamento String?      // PIX, Cartão, Dinheiro
+  valorCobrado   Float
+  observacoes    String?
+  criadoEm       DateTime     @default(now())
+
+  cliente        Cliente      @relation(fields: [clienteId], references: [id], onDelete: Cascade)
+  clienteId      Int
+
+  servico        Servico      @relation(fields: [servicoId], references: [id])
+  servicoId      Int
+
+  profissional   Profissional @relation(fields: [profissionalId], references: [id])
+  profissionalId Int
+
+  @@map("agendamentos")
+}
